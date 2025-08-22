@@ -1,8 +1,14 @@
 # Kraken-SDR-syncronization
-Multi-channel SDR acquisition with real-time synchronization using GPU-based FFT
+Python package for the multi-channel SDR acquisition with real-time synchronization using GPU-based FFT
+[<Kraken SDR>](<https://www.crowdsupply.com/krakenrf/krakensdr>)
 
 Developed as a preparation for the radio interferometry experiment (the Undergraduate Radio Lab(in KAIST))
 
+## Pre-requisites
+- 'pyrtlsdr[lib]' (modified-version for GPIO control (designated for Kraken SDR internal calibration source))
+- 'cupy'
+- 'tqdm' (optional)
+- 
 ## Implementation
 - Asynchronous reading from each channel (threading) (Maximum 5 channels(Kraken SDR's capability))
 - $N_{\rm daq}=2^{18}$ samples at once, $\Delta t\sim0.1\;\rm ms/frame$ (at $f_s=2.56\rm MHz$ sampling (complex I/Q samples))
