@@ -21,9 +21,9 @@ The synchronization conducts cross-correlation implemented with GPU-based FFT.
    
 2. **Residual delay correction**
    - Subdividing the samples of single frame into $N_{\rm corr}(<N_{\rm daq})$ with given overlap fraction (default = 0.5)
-   - a) Residual integer delay: Calculating the relative delay from Ch 0 and the others at given sub-patches to track minor integer-delay drifts
-   - b) Fractional delay: perform least square fitting of a linear function onto the frequency-phase diagram.
-      $ \phi(f) = \phi_0 -2\pi f\Delta \tau$
+   - *Residual integer delay*: Calculating the relative delay from Ch 0 and the others at given sub-patches to track minor integer-delay drifts
+   - *Fractional delay*: perform least square fitting of a linear function onto the frequency-phase diagram.
+      $\phi (f) = \phi_0 -2\pi f\Delta \tau$
 
 3. **Carrier frequency offset (CFO) correction**
       
