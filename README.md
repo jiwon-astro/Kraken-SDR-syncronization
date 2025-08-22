@@ -8,7 +8,7 @@ Developed as a preparation for the radio interferometry experiment (the Undergra
 - 'pyrtlsdr[lib]' (modified-version for GPIO control (designated for Kraken SDR internal calibration source))
 - 'cupy'
 - 'tqdm' (optional)
-- 
+
 ## Implementation
 - Asynchronous reading from each channel (threading) (Maximum 5 channels(Kraken SDR's capability))
 - $N_{\rm daq}=2^{18}$ samples at once, $\Delta t\sim0.1\;\rm ms/frame$ (at $f_s=2.56\rm MHz$ sampling (complex I/Q samples))
