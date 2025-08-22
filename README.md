@@ -7,7 +7,7 @@ Developed as a preparation for the radio interferometry experiment (the Undergra
 *Working example*
 <img width="1329" height="372" alt="image (22)" src="https://github.com/user-attachments/assets/94df26f6-5dbd-4036-bbf2-7d8f3cde076b" />
 
-*Single-channel delay tracking result (~5 min exposure)
+*Single-channel delay tracking result (~5 min exposure)*
 <img width="1460" height="760" alt="image (23)" src="https://github.com/user-attachments/assets/6b762564-447f-46af-a544-e33bb5474468" />
 
 ## Pre-requisites
