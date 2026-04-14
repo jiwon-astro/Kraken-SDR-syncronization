@@ -1,3 +1,4 @@
+import sys
 from rtlsdr import RtlSdr # RTL-SDR package, set_bias_tee_gpio included
 
 """
@@ -7,7 +8,7 @@ fc_def   = 1420e6  # center frequency
 fs_def   = 2.56e6  # ADC sampling rate
 gain_def = 50      # ADC gain (max 50)
 
-N_daq    = 2**18   # Size of DAQ buffer  
+N_daq    = 2**17   # Size of DAQ buffer  
 
 class SDR(RtlSdr):
     def __init__(self, *args, **kwargs):
@@ -35,9 +36,12 @@ class SDR(RtlSdr):
         if freq_correction:
              self.set_freq_correction(1) # Sampling frequency correction flag
         if bias_tee_enable: # bias tee enable
-            result = self.set_bias_tee_gpio(idx+1, 1)
-            print(f"Bias-tee enabled = {result}")
-                
+            result = self.set_bias_tee_gpio(gpio_pin = idx, enabled = 1)
+            print(f"[Ch {idx}] Bias-tee enabled (failed={result})", file=sys.stderr)
+        else: 
+            result = self.set_bias_tee_gpio(gpio_pin = idx, enabled = 0)
+            print(f"[Ch {idx}] Bias-tee disabled (failed={result})", file=sys.stderr)
+
     # Reconnection  
     def reconnect(self):
         try:
