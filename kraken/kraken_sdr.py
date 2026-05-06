@@ -30,8 +30,11 @@ class SDR(RtlSdr):
             'bias_tee_enable': bias_tee_enable
         }
         self.device_index = idx # device index
-        self.set_sample_rate(sample_rate) # Sampling rate (Hz) (=1/2 bandwidths)
+        self.set_sample_rate(sample_rate) # Sampling rate (Hz) (= bandwidths (for I/Q sampling))
         self.set_center_freq(center_freq) # Central frequency
+        # turn off AGC / setting manual gain
+        self.set_agc_mode(False)              # RTL2832 digital AGC OFF
+        self.set_manual_gain_enabled(True)    # tuner manual gain mode ON
         self.set_gain(gain) # SDR Gain
         if freq_correction:
              self.set_freq_correction(1) # Sampling frequency correction flag
